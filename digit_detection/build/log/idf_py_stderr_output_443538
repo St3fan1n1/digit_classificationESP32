@@ -1,0 +1,39 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400e4cc8: tflite::QuantizeMultiplierGreaterThanOne(double, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:109 (discriminator 1)
+ (inlined by) tflite::PreprocessSoftmaxScaling(double, double, int, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:317 (discriminator 1)
+[0m
+[0;33m0x40081e59: panic_abort at /home/stefano/esp/idf/esp-idf/components/esp_system/panic.c:463
+0x40088f81: esp_system_abort at /home/stefano/esp/idf/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008eb21: abort at /home/stefano/esp/idf/esp-idf/components/newlib/abort.c:38
+0x400e4cc8: tflite::QuantizeMultiplierGreaterThanOne(double, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:109 (discriminator 1)
+ (inlined by) tflite::PreprocessSoftmaxScaling(double, double, int, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:317 (discriminator 1)
+0x400e6dce: tflite::CalculateSoftmaxParams(TfLiteContext*, TfLiteTensor const*, TfLiteTensor*, TfLiteSoftmaxParams const*, tflite::SoftmaxParams*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/softmax_common.cc:123
+0x400e327a: tflite::(anonymous namespace)::Prepare(TfLiteContext*, TfLiteNode*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/softmax.cc:149
+0x400dd1c7: tflite::MicroInterpreterGraph::PrepareSubgraphs() at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter_graph.cc:102
+0x400dcc9c: tflite::MicroInterpreter::AllocateTensors() at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.cc:220
+0x400d98c3: setup at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:104
+0x400d93bf: tf_main() at /home/stefano/esp/projects_tf/digit_detection/main/main.cc:29
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400e4cc8: tflite::QuantizeMultiplierGreaterThanOne(double, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:109 (discriminator 1)
+ (inlined by) tflite::PreprocessSoftmaxScaling(double, double, int, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:317 (discriminator 1)
+[0m
+[0;33m0x40081e59: panic_abort at /home/stefano/esp/idf/esp-idf/components/esp_system/panic.c:463
+0x40088f81: esp_system_abort at /home/stefano/esp/idf/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008eb21: abort at /home/stefano/esp/idf/esp-idf/components/newlib/abort.c:38
+0x400e4cc8: tflite::QuantizeMultiplierGreaterThanOne(double, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:109 (discriminator 1)
+ (inlined by) tflite::PreprocessSoftmaxScaling(double, double, int, long*, int*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/kernels/internal/quantization_util.cc:317 (discriminator 1)
+0x400e6dce: tflite::CalculateSoftmaxParams(TfLiteContext*, TfLiteTensor const*, TfLiteTensor*, TfLiteSoftmaxParams const*, tflite::SoftmaxParams*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/softmax_common.cc:123
+0x400e327a: tflite::(anonymous namespace)::Prepare(TfLiteContext*, TfLiteNode*) at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/softmax.cc:149
+0x400dd1c7: tflite::MicroInterpreterGraph::PrepareSubgraphs() at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter_graph.cc:102
+0x400dcc9c: tflite::MicroInterpreter::AllocateTensors() at /home/stefano/esp/projects_tf/digit_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.cc:220
+0x400d98c3: setup at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:104
+0x400d93bf: tf_main() at /home/stefano/esp/projects_tf/digit_detection/main/main.cc:29
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0m

@@ -1,0 +1,29 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d98ff: run_inference at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:195
+[0m
+[0;33m0x40082fd1: esp_timer_impl_get_counter_reg at /home/stefano/esp/idf/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c:119
+0x40082fd9: esp_timer_impl_get_counter_reg at /home/stefano/esp/idf/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c:129
+[0m
+[0;33m0x400d98fc: run_inference at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:195
+0x400d9b57: inference_cli_handler at /home/stefano/esp/projects_tf/digit_detection/main/esp_cli.c:117
+0x400da0d7: esp_console_run at /home/stefano/esp/idf/esp-idf/components/console/commands.c:237
+0x400da2d8: esp_console_repl_task at /home/stefano/esp/idf/esp-idf/components/console/esp_console_common.c:177
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d98ff: run_inference at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:195
+[0m
+[0;33m0x40082fd1: esp_timer_impl_get_counter_reg at /home/stefano/esp/idf/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c:119
+0x40082fd9: esp_timer_impl_get_counter_reg at /home/stefano/esp/idf/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c:129
+[0m
+[0;33m0x400d98fc: run_inference at /home/stefano/esp/projects_tf/digit_detection/main/main_functions.cc:195
+0x400d9b57: inference_cli_handler at /home/stefano/esp/projects_tf/digit_detection/main/esp_cli.c:117
+0x400da0d7: esp_console_run at /home/stefano/esp/idf/esp-idf/components/console/commands.c:237
+0x400da2d8: esp_console_repl_task at /home/stefano/esp/idf/esp-idf/components/console/esp_console_common.c:177
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0m

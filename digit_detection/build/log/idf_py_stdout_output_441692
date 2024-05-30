@@ -1,0 +1,409 @@
+ets Jul 29 2019 1�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (237) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
+[0;32mI (726) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (734) cpu_start: Pro cpu start user code[0m
+[0;32mI (734) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (734) app_init: Application information:[0m
+[0;32mI (737) app_init: Project name:     person_detection[0m
+[0;32mI (742) app_init: App version:      1[0m
+[0;32mI (747) app_init: Compile time:     May 29 2024 14:49:24[0m
+[0;32mI (753) app_init: ELF file SHA256:  04098349f...[0m
+[0;32mI (758) app_init: ESP-IDF:          v5.4-dev-610-g003f3bb5dc[0m
+[0;32mI (764) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (769) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (774) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (779) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (786) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (792) heap_init: At 3FFB3090 len 0002CF70 (179 KiB): DRAM[0m
+[0;32mI (798) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (805) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (811) heap_init: At 40090310 len 0000FCF0 (63 KiB): IRAM[0m
+[0;32mI (817) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (825) spi_flash: detected chip: generic[0m
+[0;32mI (829) spi_flash: flash io: qio[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (844) main_task: Calling app_main()[0m
+
+abort() was called at PC 0x400e5314 on core 0
+
+
+Backtrace: 0x40081e59:0x3ffb6670 0x40088f81:0x3ffb6690 0x4008eb21:0x3ffb66b0 0x400e5314:0x3ffb6720 0x400e773a:0x3ffb6740 0x400e38c6:0x3ffb67b0 0x400dd24f:0x3ffb67f0 0x400dcd24:0x3ffb6820 0x400d994b:0x3ffb6850 0x400d93cb:0x3ffb68a0
+
+
+
+
+ELF file SHA256: 04098349f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (236) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
+[0;32mI (726) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (734) cpu_start: Pro cpu start user code[0m
+[0;32mI (734) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (734) app_init: Application information:[0m
+[0;32mI (737) app_init: Project name:     person_detection[0m
+[0;32mI (742) app_init: App version:      1[0m
+[0;32mI (747) app_init: Compile time:     May 29 2024 14:49:24[0m
+[0;32mI (753) app_init: ELF file SHA256:  04098349f...[0m
+[0;32mI (758) app_init: ESP-IDF:          v5.4-dev-610-g003f3bb5dc[0m
+[0;32mI (764) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (769) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (774) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (779) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (786) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (792) heap_init: At 3FFB3090 len 0002CF70 (179 KiB): DRAM[0m
+[0;32mI (798) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (805) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (811) heap_init: At 40090310 len 0000FCF0 (63 KiB): IRAM[0m
+[0;32mI (817) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (825) spi_flash: detected chip: generic[0m
+[0;32mI (829) spi_flash: flash io: qio[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (844) main_task: Calling app_main()[0m
+
+abort() was called at PC 0x400e5314 on core 0
+
+
+Backtrace: 0x40081e59:0x3ffb6670 0x40088f81:0x3ffb6690 0x4008eb21:0x3ffb66b0 0x400e5314:0x3ffb6720 0x400e773a:0x3ffb6740 0x400e38c6:0x3ffb67b0 0x400dd24f:0x3ffb67f0 0x400dcd24:0x3ffb6820 0x400d994b:0x3ffb6850 0x400d93cb:0x3ffb68a0
+
+
+
+
+ELF file SHA256: 04098349f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (236) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
+[0;32mI (726) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (734) cpu_start: Pro cpu start user code[0m
+[0;32mI (734) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (734) app_init: Application information:[0m
+[0;32mI (737) app_init: Project name:     person_detection[0m
+[0;32mI (742) app_init: App version:      1[0m
+[0;32mI (747) app_init: Compile time:     May 29 2024 14:49:24[0m
+[0;32mI (753) app_init: ELF file SHA256:  04098349f...[0m
+[0;32mI (758) app_init: ESP-IDF:          v5.4-dev-610-g003f3bb5dc[0m
+[0;32mI (764) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (769) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (774) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (779) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (786) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (792) heap_init: At 3FFB3090 len 0002CF70 (179 KiB): DRAM[0m
+[0;32mI (798) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (805) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (811) heap_init: At 40090310 len 0000FCF0 (63 KiB): IRAM[0m
+[0;32mI (817) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (825) spi_flash: detected chip: generic[0m
+[0;32mI (829) spi_flash: flash io: qio[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (844) main_task: Calling app_main()[0m
+
+abort() was called at PC 0x400e5314 on core 0
+
+
+Backtrace: 0x40081e59:0x3ffb6670 0x40088f81:0x3ffb6690 0x4008eb21:0x3ffb66b0 0x400e5314:0x3ffb6720 0x400e773a:0x3ffb6740 0x400e38c6:0x3ffb67b0 0x400dd24f:0x3ffb67f0 0x400dcd24:0x3ffb6820 0x400d994b:0x3ffb6850 0x400d93cb:0x3ffb68a0
+
+
+
+
+ELF file SHA256: 04098349f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (236) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
+[0;32mI (726) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (734) cpu_start: Pro cpu start user code[0m
+[0;32mI (734) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (734) app_init: Application information:[0m
+[0;32mI (737) app_init: Project name:     person_detection[0m
+[0;32mI (742) app_init: App version:      1[0m
+[0;32mI (747) app_init: Compile time:     May 29 2024 14:49:24[0m
+[0;32mI (753) app_init: ELF file SHA256:  04098349f...[0m
+[0;32mI (758) app_init: ESP-IDF:          v5.4-dev-610-g003f3bb5dc[0m
+[0;32mI (764) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (769) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (774) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (779) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (786) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (792) heap_init: At 3FFB3090 len 0002CF70 (179 KiB): DRAM[0m
+[0;32mI (798) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (805) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (811) heap_init: At 40090310 len 0000FCF0 (63 KiB): IRAM[0m
+[0;32mI (817) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (825) spi_flash: detected chip: generic[0m
+[0;32mI (829) spi_flash: flash io: qio[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (844) main_task: Calling app_main()[0m
+
+abort() was called at PC 0x400e5314 on core 0
+
+
+Backtrace: 0x40081e59:0x3ffb6670 0x40088f81:0x3ffb6690 0x4008eb21:0x3ffb66b0 0x400e5314:0x3ffb6720 0x400e773a:0x3ffb6740 0x400e38c6:0x3ffb67b0 0x400dd24f:0x3ffb67f0 0x400dcd24:0x3ffb6820 0x400d994b:0x3ffb6850 0x400d93cb:0x3ffb68a0
+
+
+
+
+ELF file SHA256: 04098349f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (236) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
+[0;32mI (726) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (734) cpu_start: Pro cpu start user code[0m
+[0;32mI (734) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (734) app_init: Application information:[0m
+[0;32mI (737) app_init: Project name:     person_detection[0m
+[0;32mI (742) app_init: App version:      1[0m
+[0;32mI (747) app_init: Compile time:     May 29 2024 14:49:24[0m
+[0;32mI (753) app_init: ELF file SHA256:  04098349f...[0m
+[0;32mI (758) app_init: ESP-IDF:          v5.4-dev-610-g003f3bb5dc[0m
+[0;32mI (764) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (769) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (774) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (779) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (786) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (792) heap_init: At 3FFB3090 len 0002CF70 (179 KiB): DRAM[0m
+[0;32mI (798) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (805) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (811) heap_init: At 40090310 len 0000FCF0 (63 KiB): IRAM[0m
+[0;32mI (817) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (825) spi_flash: detected chip: generic[0m
+[0;32mI (829) spi_flash: flash io: qio[0m
+[0;32mI (834) main_task: Started on CPU0[0m
+[0;32mI (844) main_task: Calling app_main()[0m
+
+abort() was called at PC 0x400e5314 on core 0
+
+
+Backtrace: 0x40081e59:0x3ffb6670 0x40088f81:0x3ffb6690 0x4008eb21:0x3ffb66b0 0x400e5314:0x3ffb6720 0x400e773a:0x3ffb6740 0x400e38c6:0x3ffb67b0 0x400dd24f:0x3ffb67f0 0x400dcd24:0x3ffb6820 0x400d994b:0x3ffb6850 0x400d93cb:0x3ffb68a0
+
+
+
+
+ELF file SHA256: 04098349f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-610-g003f3bb5dc 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2024 14:49:31[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=17a6ch ( 96876) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00027a94 vaddr=3ffb0000 size=022a4h (  8868) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00029d40 vaddr=40080000 size=062d8h ( 25304) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=34ccch (216268) map[0m
+[0;32mI (204) esp_image: segment 4: paddr=00064cf4 vaddr=400862d8 size=0a038h ( 41016) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (225) boot: Disabling RNG early entropy source...[0m
+[0;32mI (236) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (236) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (237) esp_psram: Speed: 80MHz[0m
+[0;32mI (238) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (246) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (255) cpu_start: Multicore app[0m
