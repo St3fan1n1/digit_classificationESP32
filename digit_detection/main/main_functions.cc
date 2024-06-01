@@ -192,6 +192,7 @@ void loop() {
 void run_inference(void *ptr) {
   /* Convert from uint8 picture data to int8 */
   for (int i = 0; i < kNumCols * kNumRows; i++) {
+    // input->data.int8[i] = ((uint8_t *) ptr)[i];
     input->data.int8[i] = ((uint8_t *) ptr)[i] ^ 0x80;
 
     printf("%d, ", input->data.int8[i]);

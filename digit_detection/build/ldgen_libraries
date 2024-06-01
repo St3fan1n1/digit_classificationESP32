@@ -36,12 +36,12 @@
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/sdmmc/libsdmmc.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_sdmmc/libesp_driver_sdmmc.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_sdspi/libesp_driver_sdspi.a
-/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_sdio/libesp_driver_sdio.a
-/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_dac/libesp_driver_dac.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_rmt/libesp_driver_rmt.a
+/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_tsens/libesp_driver_tsens.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_sdm/libesp_driver_sdm.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
+/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/driver/libdriver.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_phy/libesp_phy.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/esp_vfs_console/libesp_vfs_console.a
@@ -79,6 +79,8 @@
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/perfmon/libperfmon.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/spiffs/libspiffs.a
+/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/touch_element/libtouch_element.a
+/home/stefano/esp/projects_tf/digit_detection/build/esp-idf/usb/libusb.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/static_images/libstatic_images.a
 /home/stefano/esp/projects_tf/digit_detection/build/esp-idf/espressif__esp-nn/libespressif__esp-nn.a

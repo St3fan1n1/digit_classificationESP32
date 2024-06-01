@@ -28,7 +28,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "ldgen_libraries.in"
   "person_detection.bin"
   "person_detection.map"
-  "project_elf_src_esp32.c"
+  "project_elf_src_esp32s3.c"
   "x509_crt_bundle.S"
   )
 endif()
