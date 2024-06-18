@@ -1,0 +1,16 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyACM0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x4200badd: run_inference at /home/stefano/esp/projects_tf/person_detection/main/main_functions.cc:168
+[0m
+[0;33m0x42037616: uart_ll_write_txfifo at /home/stefano/esp/idf/esp-idf/components/hal/esp32s3/include/hal/uart_ll.h:339
+ (inlined by) uart_hal_write_txfifo at /home/stefano/esp/idf/esp-idf/components/hal/uart_hal_iram.c:32
+0x42037622: uart_hal_write_txfifo at /home/stefano/esp/idf/esp-idf/components/hal/uart_hal_iram.c:33
+[0m
+[0;33m0x4200bada: run_inference at /home/stefano/esp/projects_tf/person_detection/main/main_functions.cc:168
+0x4200bc9d: inference_cli_handler at /home/stefano/esp/projects_tf/person_detection/main/esp_cli.c:117
+0x4200c2db: esp_console_run at /home/stefano/esp/idf/esp-idf/components/console/commands.c:237
+0x4200c4ec: esp_console_repl_task at /home/stefano/esp/idf/esp-idf/components/console/esp_console_common.c:177
+[0m
+[0;33m0x40375ce4: esp_restart_noos at /home/stefano/esp/idf/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0m
