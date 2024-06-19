@@ -136,16 +136,16 @@ void loop() {
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t lata_score = output->data.uint8[kLataIndex];
+  int8_t no_lata_score = output->data.uint8[kNotALataIndex];
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
+  float lata_score_f =
+      (lata_score - output->params.zero_point) * output->params.scale;
+  float no_lata_score_f =
+      (no_lata_score - output->params.zero_point) * output->params.scale;
 
   // Respond to detection
-  RespondToDetection(person_score_f, no_person_score_f);
+  RespondToDetection(lata_score_f, no_lata_score_f);
   vTaskDelay(1); // to avoid watchdog trigger
 }
 #endif
@@ -203,12 +203,12 @@ void run_inference(void *ptr) {
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t lata_score = output->data.uint8[kLataIndex];
+  int8_t no_lata_score = output->data.uint8[kNotALataIndex];
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
-  RespondToDetection(person_score_f, no_person_score_f);
+  float lata_score_f =
+      (lata_score - output->params.zero_point) * output->params.scale;
+  float no_lata_score_f =
+      (no_lata_score - output->params.zero_point) * output->params.scale;
+  RespondToDetection(lata_score_f, no_lata_score_f);
 }

@@ -603,8 +603,6 @@ _Python3_EXECUTABLE:INTERNAL=/home/stefano/esp/idf-tools/python_env/idf5.4_py3.1
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;32;;;/usr/lib/python3.11;/usr/lib/python3.11;/home/stefano/esp/idf-tools/python_env/idf5.4_py3.11_env/lib/python3.11/site-packages;/home/stefano/esp/idf-tools/python_env/idf5.4_py3.11_env/lib/python3.11/site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=64c5470746f77ef0b7c36bc929b198d6
-//Interpreter reason failure
-_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

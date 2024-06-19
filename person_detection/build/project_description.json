@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "person_detection",
-    "project_version":    "ca4d568-dirty",
+    "project_version":    "a35acea-dirty",
     "project_path":       "/home/stefano/esp/projects_tf/person_detection",
     "idf_path":           "/home/stefano/esp/idf/esp-idf",
     "build_dir":          "/home/stefano/esp/projects_tf/person_detection/build",
@@ -2853,18 +2853,6 @@
             "managed_priv_reqs": [],
             "include_dirs": []
         },
-        "espressif__esp32-camera": {
-            "alias": "idf::espressif__esp32-camera",
-            "target": "___idf_espressif__esp32-camera",
-            "prefix": "idf",
-            "dir": "/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera",
-            "lib": "__idf_espressif__esp32-camera",
-            "reqs": [ "driver" ],
-            "priv_reqs": [ "freertos", "nvs_flash", "esp_timer" ],
-            "managed_reqs": [],
-            "managed_priv_reqs": [],
-            "include_dirs": [ "driver/include", "conversions/include" ]
-        },
         "espressif__esp-tflite-micro": {
             "alias": "idf::espressif__esp-tflite-micro",
             "target": "___idf_espressif__esp-tflite-micro",
@@ -2888,6 +2876,18 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "src/common" ]
+        },
+        "espressif__esp32-camera": {
+            "alias": "idf::espressif__esp32-camera",
+            "target": "___idf_espressif__esp32-camera",
+            "prefix": "idf",
+            "dir": "/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera",
+            "lib": "__idf_espressif__esp32-camera",
+            "reqs": [ "driver" ],
+            "priv_reqs": [ "freertos", "nvs_flash", "esp_timer" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "driver/include", "conversions/include" ]
         }
     },
     "debug_prefix_map_gdbinit": ""

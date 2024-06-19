@@ -36,7 +36,7 @@ limitations under the License.
 #define IMG_HT (96 * 2)
 
 static lv_obj_t *camera_canvas = NULL;
-static lv_obj_t *person_indicator = NULL;
+static lv_obj_t *lata_indicator = NULL;
 static lv_obj_t *label = NULL;
 
 static void create_gui(void)
@@ -48,22 +48,22 @@ static void create_gui(void)
   assert(camera_canvas);
   lv_obj_align(camera_canvas, LV_ALIGN_TOP_MID, 0, 0);
 
-  person_indicator = lv_led_create(lv_scr_act());
-  assert(person_indicator);
-  lv_obj_align(person_indicator, LV_ALIGN_BOTTOM_MID, -70, 0);
-  lv_led_set_color(person_indicator, lv_palette_main(LV_PALETTE_GREEN));
+  lata_indicator = lv_led_create(lv_scr_act());
+  assert(lata_indicator);
+  lv_obj_align(lata_indicator, LV_ALIGN_BOTTOM_MID, -70, 0);
+  lv_led_set_color(lata_indicator, lv_palette_main(LV_PALETTE_GREEN));
 
   label = lv_label_create(lv_scr_act());
   assert(label);
-  lv_label_set_text_static(label, "Person detected");
-  lv_obj_align_to(label, person_indicator, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
+  lv_label_set_text_static(label, "Lata detected");
+  lv_obj_align_to(label, lata_indicator, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
   bsp_display_unlock();
 }
 #endif // DISPLAY_SUPPORT
 
-void RespondToDetection(float person_score, float no_person_score) {
-  int person_score_int = (person_score) * 100 + 0.5;
-  (void) no_person_score; // unused
+void RespondToDetection(float lata_score, float no_lata_score) {
+  int lata_score_int = (lata_score) * 100 + 0.5;
+  (void) no_lata_score; // unused
 #if DISPLAY_SUPPORT
     if (!camera_canvas) {
       create_gui();
@@ -72,18 +72,18 @@ void RespondToDetection(float person_score, float no_person_score) {
     uint16_t *buf = (uint16_t *) image_provider_get_display_buf();
 
     bsp_display_lock(0);
-    if (person_score_int < 60) { // treat score less than 60% as no person
-      lv_led_off(person_indicator);
+    if (lata_score_int < 60) { // treat score less than 60% as no person
+      lv_led_off(lata_indicator);
     } else {
-      lv_led_on(person_indicator);
+      lv_led_on(lata_indicator);
     }
     lv_canvas_set_buffer(camera_canvas, buf, IMG_WD, IMG_HT, LV_IMG_CF_TRUE_COLOR);
     bsp_display_unlock();
 #endif // DISPLAY_SUPPORT
   MicroPrintf("lata score:%d%%, no lata score %d%%",
-              person_score_int, 100 - person_score_int);
+              lata_score_int, 100 - lata_score_int);
 
-  if (person_score_int > 60){
+  if (lata_score_int > 60){
     gpio_set_level(BLINK_GPIO, 1);
   } else {
     gpio_set_level(BLINK_GPIO, 0);
