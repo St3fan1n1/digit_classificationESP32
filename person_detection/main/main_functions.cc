@@ -34,6 +34,12 @@ limitations under the License.
 #include <esp_log.h>
 #include "esp_main.h"
 
+#include "tensorflow/lite/micro/kernels/esp_nn/conv_timer.h"
+#include "tensorflow/lite/micro/kernels/esp_nn/fully_connected_timer.h"
+#include "tensorflow/lite/micro/kernels/esp_nn/pooling_timer.h"
+#include "tensorflow/lite/micro/kernels/esp_nn/softmax_timer.h"
+#include "tensorflow/lite/micro/kernels/reshape.h"
+
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
 const tflite::Model* model = nullptr;
@@ -163,42 +169,48 @@ void loop() {
 #endif
 
 void run_inference(void *ptr) {
+  //Para medir el tiempo de inferencia
+  long long start_inference_time = esp_timer_get_time();
+
+  // Medir tiempo de cuantización
+  long long start_quantization_time = esp_timer_get_time();
+
   /* Convert from uint8 picture data to int8 */
   for (int i = 0; i < kNumCols * kNumRows; i++) {
     input->data.int8[i] = ((uint8_t *) ptr)[i] ^ 0x80;
 
-    printf("%d, ", input->data.int8[i]);
+    // printf("%d, ", input->data.int8[i]);
   }
 
-#if defined(COLLECT_CPU_STATS)
-  long long start_time = esp_timer_get_time();
-#endif
+  long long end_quantization_time = esp_timer_get_time();
+  long long total_quantization_time = end_quantization_time - start_quantization_time;
+
+  printf("\nTIEMPOS (microsegundos):\n");
+  printf("\nTiempo Cuantización: %lld\n", total_quantization_time);
+  printf("\nTiempo capas:\n");
+
   // Run the model on this input and make sure it succeeds.
   if (kTfLiteOk != interpreter->Invoke()) {
     MicroPrintf("Invoke failed.");
   }
 
-#if defined(COLLECT_CPU_STATS)
-  long long total_time = (esp_timer_get_time() - start_time);
-  printf("Total time = %lld\n", total_time / 1000);
-  //printf("Softmax time = %lld\n", softmax_total_time / 1000);
-  printf("FC time = %lld\n", fc_total_time / 1000);
-  printf("DC time = %lld\n", dc_total_time / 1000);
-  printf("conv time = %lld\n", conv_total_time / 1000);
-  printf("Pooling time = %lld\n", pooling_total_time / 1000);
-  printf("add time = %lld\n", add_total_time / 1000);
-  printf("mul time = %lld\n", mul_total_time / 1000);
+  long long total_conv_time = GetTotalConvTime();
+  printf("\nTiempo total Conv2D: %lld\n", total_conv_time);
 
-  /* Reset times */
-  total_time = 0;
-  //softmax_total_time = 0;
-  dc_total_time = 0;
-  conv_total_time = 0;
-  fc_total_time = 0;
-  pooling_total_time = 0;
-  add_total_time = 0;
-  mul_total_time = 0;
-#endif
+  long long total_pooling_time = GetTotalPoolingTime();
+  printf("Tiempo total MaxPooling: %lld\n", total_pooling_time);
+  
+  long long total_fullyConnected_time = GetTotalFullyConnectedTime();
+  printf("Tiempo total Fully Connected: %lld\n", total_fullyConnected_time);
+
+  long long total_reshape_time = GetTotalReshapeTime();
+  printf("Tiempo total Flatten: %lld\n", total_reshape_time);
+
+  long long total_softmax_time = GetTotalSoftmaxTime();
+  printf("Tiempo total Softmax: %lld\n", total_softmax_time);
+
+  //Medir tiempo de procesamiento de los resultados
+  long long start_result_time = esp_timer_get_time();
 
   TfLiteTensor* output = interpreter->output(0);
 
@@ -211,4 +223,58 @@ void run_inference(void *ptr) {
   float no_lata_score_f =
       (no_lata_score - output->params.zero_point) * output->params.scale;
   RespondToDetection(lata_score_f, no_lata_score_f);
+
+  long long end_inference_time = esp_timer_get_time();
+  long long total_inference_time = end_inference_time - start_inference_time;
+
+  long long end_result_time = esp_timer_get_time();
+  long long result_time = end_result_time - start_result_time;
+  printf("Tiempo de procesamiento de respuesta: %lld\n", result_time);
+
+  // printf("Tiempo de inferencia: %lld microsegundos\n", total_inference_time);
+
+  long long sum_subtasks = result_time + total_quantization_time + total_fullyConnected_time + total_pooling_time + total_conv_time + total_reshape_time + total_softmax_time; 
+  printf("Suma de los subtasks: %lld\n", sum_subtasks);
+
+  //Tiempo total de inferencia
+  printf("\nTiempo Total Inferencia: %lld\n", total_inference_time);
+
+  //Identificar el bottleneck
+  const char* bottleneck_operation = "Conv2D";
+  long long bottleneck_time = total_conv_time;
+
+  if(total_pooling_time > bottleneck_time){
+    bottleneck_operation = "MaxPooling";
+    bottleneck_time = total_pooling_time;
+  }
+
+  if(total_fullyConnected_time > bottleneck_time){
+    bottleneck_operation = "FullyConnected";
+    bottleneck_time = total_fullyConnected_time;
+  }
+
+  if(total_reshape_time > bottleneck_time){
+    bottleneck_operation = "Flatten";
+    bottleneck_time = total_reshape_time;
+  }
+
+  if(total_softmax_time > bottleneck_time){
+    bottleneck_operation = "Softmax";
+    bottleneck_time = total_softmax_time;
+  }
+
+  if(result_time > bottleneck_time){
+    bottleneck_operation = "Procesamiento respuesta";
+    bottleneck_time = result_time;
+  }
+
+  if(total_quantization_time > bottleneck_time){
+    bottleneck_operation = "Cuantización";
+    bottleneck_time = total_quantization_time;
+  }
+
+  printf("Operacion Bottleneck: %s\n", bottleneck_operation);
+  printf("Tiempo Bottleneck: %lld\n", bottleneck_time);
+
 }
+

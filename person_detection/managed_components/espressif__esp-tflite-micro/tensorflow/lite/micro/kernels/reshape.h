@@ -1,3 +1,6 @@
+#ifndef TENSORFLOW_LITE_MICRO_KERNELS_RESHAPE_H_
+#define TENSORFLOW_LITE_MICRO_KERNELS_RESHAPE_H_
+
 /* Copyright 2023 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,3 +27,15 @@ constexpr int kReshapeOutputTensor = 0;
 TfLiteStatus PrepareReshapeReference(TfLiteContext* context, TfLiteNode* node);
 
 }  // namespace tflite
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+long long GetTotalReshapeTime();
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // TENSORFLOW_LITE_MICRO_KERNELS_RESHAPE_H_

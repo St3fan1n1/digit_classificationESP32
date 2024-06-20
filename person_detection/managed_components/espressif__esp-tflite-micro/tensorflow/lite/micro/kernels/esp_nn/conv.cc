@@ -392,9 +392,14 @@ static TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
                   input->type);
       return kTfLiteError;
   }
-  long long time_this_instance = esp_timer_get_time() - start_time;
-  conv_total_time += time_this_instance;
+  // long long time_this_instance = esp_timer_get_time() - start_time;
+  // conv_total_time += time_this_instance;
   // printf("time this conv instance: %llu\n", time_this_instance / 1000);
+
+  long long total_time = esp_timer_get_time() - start_time;
+  // long long total_time = end_time - start_time;
+  printf("Conv2D time: %lld\n", total_time);
+  conv_total_time += total_time;
   return kTfLiteOk;
 }
 
@@ -405,3 +410,8 @@ TFLMRegistration Register_CONV_2D() {
 }
 
 }  // namespace tflite
+
+extern "C" long long GetTotalConvTime() {
+  // printf("TIEMPO TOTAL CONVOLUCIOON: %lld\n", conv_total_time);
+  return conv_total_time;
+}

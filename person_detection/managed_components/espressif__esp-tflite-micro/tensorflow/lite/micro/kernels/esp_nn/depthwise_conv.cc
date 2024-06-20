@@ -404,7 +404,10 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
   long long time_this_instance = esp_timer_get_time() - start_time;
   dc_total_time += time_this_instance;
   // printf("time this dc instance: %llu\n", time_this_instance / 1000);
-
+  
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+  printf("Depthwise Layer time: %lld\n", total_time);
   return kTfLiteOk;
 }
 

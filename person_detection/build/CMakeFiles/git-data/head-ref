@@ -1,3 +1,1 @@
-0000000000000000000000000000000000000000 886155aacaedafb521db88d2a404df820cb14a14 Stefano Romanini <spromanini@miuandes.cl> 1717031688 -0400	commit (initial): Digit Detection ESP32
-886155aacaedafb521db88d2a404df820cb14a14 ca4d568c988c7334f28a13ad12d8eab0378e35ae Stefano Romanini <spromanini@miuandes.cl> 1717213868 -0400	commit: digit detection ready. Test with MNIST data
-ca4d568c988c7334f28a13ad12d8eab0378e35ae a35acea2d992d5566e791b675ac9c37f386ce25b Stefano Romanini <spromanini@miuandes.cl> 1718751114 -0400	commit: lata_classification
+eb7df2bc55c530557ca81716af25676beaa7a1f5

@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "person_detection",
-    "project_version":    "a35acea-dirty",
+    "project_version":    "eb7df2b-dirty",
     "project_path":       "/home/stefano/esp/projects_tf/person_detection",
     "idf_path":           "/home/stefano/esp/idf/esp-idf",
     "build_dir":          "/home/stefano/esp/projects_tf/person_detection/build",
@@ -2853,18 +2853,6 @@
             "managed_priv_reqs": [],
             "include_dirs": []
         },
-        "espressif__esp-tflite-micro": {
-            "alias": "idf::espressif__esp-tflite-micro",
-            "target": "___idf_espressif__esp-tflite-micro",
-            "prefix": "idf",
-            "dir": "/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro",
-            "lib": "__idf_espressif__esp-tflite-micro",
-            "reqs": [],
-            "priv_reqs": [ "esp_timer", "driver", "espressif__esp-nn" ],
-            "managed_reqs": [],
-            "managed_priv_reqs": [ "espressif__esp-nn" ],
-            "include_dirs": [ ".", "third_party/gemmlowp", "third_party/flatbuffers/include", "third_party/ruy", "third_party/kissfft", "signal/micro/kernels", "signal/src", "signal/src/kiss_fft_wrappers" ]
-        },
         "espressif__esp-nn": {
             "alias": "idf::espressif__esp-nn",
             "target": "___idf_espressif__esp-nn",
@@ -2876,6 +2864,18 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "src/common" ]
+        },
+        "espressif__esp-tflite-micro": {
+            "alias": "idf::espressif__esp-tflite-micro",
+            "target": "___idf_espressif__esp-tflite-micro",
+            "prefix": "idf",
+            "dir": "/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro",
+            "lib": "__idf_espressif__esp-tflite-micro",
+            "reqs": [],
+            "priv_reqs": [ "esp_timer", "driver", "espressif__esp-nn" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [ "espressif__esp-nn" ],
+            "include_dirs": [ ".", "third_party/gemmlowp", "third_party/flatbuffers/include", "third_party/ruy", "third_party/kissfft", "signal/micro/kernels", "signal/src", "signal/src/kiss_fft_wrappers" ]
         },
         "espressif__esp32-camera": {
             "alias": "idf::espressif__esp32-camera",

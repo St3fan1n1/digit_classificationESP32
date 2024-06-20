@@ -25,6 +25,8 @@ limitations under the License.
 #include "tensorflow/lite/micro/kernels/prelu.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
+#include <esp_timer.h>
+
 namespace tflite {
 
 void* PreluInit(TfLiteContext* context, const char* buffer, size_t length) {
@@ -40,6 +42,8 @@ TfLiteStatus PreluEval(TfLiteContext* context, TfLiteNode* node) {
   const TfLiteEvalTensor* input = tflite::micro::GetEvalInput(context, node, 0);
   const TfLiteEvalTensor* alpha = tflite::micro::GetEvalInput(context, node, 1);
   TfLiteEvalTensor* output = tflite::micro::GetEvalOutput(context, node, 0);
+
+  long long start_time = esp_timer_get_time();
 
   switch (input->type) {
     case kTfLiteFloat32: {
@@ -66,6 +70,11 @@ TfLiteStatus PreluEval(TfLiteContext* context, TfLiteNode* node) {
                   TfLiteTypeGetName(input->type));
       return kTfLiteError;
   }
+
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+
+  printf("Relu time: %lld\n", total_time);
 }
 
 TFLMRegistration Register_PRELU() {

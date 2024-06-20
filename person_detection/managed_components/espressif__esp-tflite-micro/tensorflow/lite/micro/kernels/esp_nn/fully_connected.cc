@@ -237,7 +237,14 @@ TfLiteStatus FullyConnectedEval(TfLiteContext* context, TfLiteNode* node) {
       return kTfLiteError;
     }
   }
-  fc_total_time += esp_timer_get_time() - start_time;
+  // fc_total_time += esp_timer_get_time() - start_time;
+
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+  printf("Fully connected layer time: %lld\n", total_time);
+
+  fc_total_time += total_time;
+  
   return kTfLiteOk;
 }
 
@@ -253,3 +260,7 @@ TFLMInferenceRegistration RegisterInference_FULLY_CONNECTED() {
 }
 
 }  // namespace tflite
+
+extern "C" long long GetTotalFullyConnectedTime() {
+  return fc_total_time;
+}

@@ -24,10 +24,15 @@ limitations under the License.
 #include "tensorflow/lite/micro/kernels/kernel_util.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
+#include "esp_timer.h"
+
 namespace tflite {
 namespace {
 
 TfLiteStatus ConvEval(TfLiteContext* context, TfLiteNode* node) {
+
+  printf("ESTAMOS EN CONV.CC");
+
   const TfLiteEvalTensor* input =
       tflite::micro::GetEvalInput(context, node, kConvInputTensor);
   const TfLiteEvalTensor* filter =
@@ -44,6 +49,9 @@ TfLiteStatus ConvEval(TfLiteContext* context, TfLiteNode* node) {
       *(reinterpret_cast<TfLiteConvParams*>(node->builtin_data));
   TFLITE_DCHECK(node->user_data != nullptr);
   const auto& data = *(static_cast<const OpDataConv*>(node->user_data));
+
+  //Measure Conv2D layer time
+  long long start_time = esp_timer_get_time();
 
   switch (input->type) {  // Already know in/out types are same.
     case kTfLiteFloat32: {
@@ -138,6 +146,12 @@ TfLiteStatus ConvEval(TfLiteContext* context, TfLiteNode* node) {
                   input->type);
       return kTfLiteError;
   }
+
+  //Measure end time of Conv2D layer
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+  printf("Conv2D Layer time: %lld\n", total_time);
+
   return kTfLiteOk;
 }
 

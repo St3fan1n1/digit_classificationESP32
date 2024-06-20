@@ -24,6 +24,8 @@ limitations under the License.
 #include "tensorflow/lite/micro/kernels/kernel_util.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
+#include <esp_timer.h>
+
 namespace tflite {
 namespace {
 
@@ -49,6 +51,8 @@ TfLiteStatus PadEval(TfLiteContext* context, TfLiteNode* node) {
           : nullptr;
   TfLiteEvalTensor* output =
       tflite::micro::GetEvalOutput(context, node, /*index=*/0);
+
+  long long start_time = esp_timer_get_time();
 
   switch (input->type) {
     case kTfLiteFloat32: {
@@ -115,6 +119,9 @@ TfLiteStatus PadEval(TfLiteContext* context, TfLiteNode* node) {
                   TfLiteTypeGetName(input->type));
       return kTfLiteError;
   }
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+  printf("Padding time: %lld\n", total_time);
   return kTfLiteOk;
 }
 

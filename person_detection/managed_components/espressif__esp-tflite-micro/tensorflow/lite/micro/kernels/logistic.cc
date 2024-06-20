@@ -27,6 +27,8 @@ limitations under the License.
 #include "tensorflow/lite/micro/kernels/logistic.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
+#include <esp_timer.h>
+
 namespace tflite {
 namespace {
 
@@ -43,6 +45,8 @@ TfLiteStatus LogisticEval(TfLiteContext* context, TfLiteNode* node) {
 
   TFLITE_DCHECK(node->user_data != nullptr);
   OpDataLogistic* data = static_cast<OpDataLogistic*>(node->user_data);
+
+  long long start_time = esp_timer_get_time();
 
   if (input->type == kTfLiteFloat32) {
     switch (output->type) {
@@ -100,6 +104,10 @@ TfLiteStatus LogisticEval(TfLiteContext* context, TfLiteNode* node) {
                 TfLiteTypeGetName(output->type));
     return kTfLiteError;
   }
+  long long end_time = esp_timer_get_time();
+  long long total_time = end_time - start_time;
+  printf("Logistic time: %lld\n", total_time);
+
   return kTfLiteOk;
 }
 
