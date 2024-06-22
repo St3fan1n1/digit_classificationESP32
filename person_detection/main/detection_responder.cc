@@ -19,6 +19,15 @@ limitations under the License.
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/mcpwm.h"
+#include "soc/mcpwm_periph.h"
+
+#define SERVO_PIN 18
+
+
 #include "detection_responder.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
@@ -61,7 +70,31 @@ static void create_gui(void)
 }
 #endif // DISPLAY_SUPPORT
 
+// Function to initialize the MCPWM module for controlling the servo
+void mcpwm_example_gpio_initialize(void) {
+    printf("Initializing MCPWM servo control...\n");
+    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, SERVO_PIN);
+}
+
+void servo_control(mcpwm_unit_t mcpwm_num, mcpwm_timer_t timer_num, float angle) {
+    // Calculate pulse width (500us - 2500us) corresponding to the angle (-90° - 270°)
+    uint32_t duty_us = (500 + ((angle + 90) / 360.0) * 2000);
+    mcpwm_set_duty_in_us(mcpwm_num, timer_num, MCPWM_OPR_A, duty_us);
+}
+
 void RespondToDetection(float lata_score, float no_lata_score) {
+  // Initialize MCPWM
+  mcpwm_example_gpio_initialize();
+
+  // Configure MCPWM
+  mcpwm_config_t pwm_config;
+  pwm_config.frequency = 50;    // Frequency = 50Hz, for servo motor
+  pwm_config.cmpr_a = 0;        // Duty cycle of PWMxA = 0
+  pwm_config.cmpr_b = 0;        // Duty cycle of PWMxB = 0
+  pwm_config.counter_mode = MCPWM_UP_COUNTER;
+  pwm_config.duty_mode = MCPWM_DUTY_MODE_0;
+  mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &pwm_config);
+
   int lata_score_int = (lata_score) * 100 + 0.5;
   (void) no_lata_score; // unused
 #if DISPLAY_SUPPORT
@@ -84,8 +117,16 @@ void RespondToDetection(float lata_score, float no_lata_score) {
               lata_score_int, 100 - lata_score_int);
 
   if (lata_score_int > 60){
-    gpio_set_level(BLINK_GPIO, 1);
+    // gpio_set_level(BLINK_GPIO, 1);
+    for (int angle=-90; angle<=270;angle++){
+      servo_control(MCPWM_UNIT_0, MCPWM_TIMER_0, angle);
+      vTaskDelay(pdMS_TO_TICKS(10));
+    }
   } else {
-    gpio_set_level(BLINK_GPIO, 0);
+    for (int angle=270; angle>=-90; angle--){
+      servo_control(MCPWM_UNIT_0, MCPWM_TIMER_0, angle);
+      vTaskDelay(pdMS_TO_TICKS(10));
+    }
+    // gpio_set_level(BLINK_GPIO, 0);
   }
 }

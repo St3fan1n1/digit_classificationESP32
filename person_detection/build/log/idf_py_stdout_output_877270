@@ -1,0 +1,258 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/stefano/esp/projects_tf/person_detection/build/bootloader/esp-idf/esptool_py && /home/stefano/esp/idf-tools/python_env/idf5.4_py3.11_env/bin/python /home/stefano/esp/idf/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/stefano/esp/projects_tf/person_detection/build/bootloader/bootloader.bin
+Bootloader binary size 0x58a0 bytes. 0x2760 bytes (31%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj 
+/home/stefano/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -DESP_PLATFORM -DIDF_VER=\"v5.4-dev-610-g003f3bb5dc\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/stefano/esp/projects_tf/person_detection/build/config -I/home/stefano/esp/idf/esp-idf/components/newlib/platform_include -I/home/stefano/esp/idf/esp-idf/components/freertos/config/include -I/home/stefano/esp/idf/esp-idf/components/freertos/config/include/freertos -I/home/stefano/esp/idf/esp-idf/components/freertos/config/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/stefano/esp/idf/esp-idf/components/freertos/esp_additions/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/soc -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/dma/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/ldo/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/heap/include -I/home/stefano/esp/idf/esp-idf/components/log/include -I/home/stefano/esp/idf/esp-idf/components/soc/include -I/home/stefano/esp/idf/esp-idf/components/soc/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/soc/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/hal/platform_port/include -I/home/stefano/esp/idf/esp-idf/components/hal/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/hal/include -I/home/stefano/esp/idf/esp-idf/components/esp_rom/include -I/home/stefano/esp/idf/esp-idf/components/esp_rom/include/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_rom/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_common/include -I/home/stefano/esp/idf/esp-idf/components/esp_system/include -I/home/stefano/esp/idf/esp-idf/components/esp_system/port/soc -I/home/stefano/esp/idf/esp-idf/components/esp_system/port/include/private -I/home/stefano/esp/idf/esp-idf/components/xtensa/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/xtensa/deprecated_include -I/home/stefano/esp/idf/esp-idf/components/esp_timer/include -I/home/stefano/esp/idf/esp-idf/components/lwip/include -I/home/stefano/esp/idf/esp-idf/components/lwip/include/apps -I/home/stefano/esp/idf/esp-idf/components/lwip/include/apps/sntp -I/home/stefano/esp/idf/esp-idf/components/lwip/lwip/src/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/freertos/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/stefano/esp/idf/esp-idf/components/console -I/home/stefano/esp/idf/esp-idf/components/vfs/include -I/home/stefano/esp/idf/esp-idf/components/esp_vfs_console/include -I/home/stefano/esp/idf/esp-idf/components/spi_flash/include -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/gemmlowp -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/flatbuffers/include -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/ruy -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/kissfft -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/micro/kernels -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/src -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/src/kiss_fft_wrappers -I/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/driver/include -I/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/conversions/include -I/home/stefano/esp/idf/esp-idf/components/driver/deprecated -I/home/stefano/esp/idf/esp-idf/components/driver/i2c/include -I/home/stefano/esp/idf/esp-idf/components/driver/touch_sensor/include -I/home/stefano/esp/idf/esp-idf/components/driver/twai/include -I/home/stefano/esp/idf/esp-idf/components/driver/touch_sensor/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/esp_pm/include -I/home/stefano/esp/idf/esp-idf/components/esp_ringbuf/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_gpio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_pcnt/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_gptimer/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_spi/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_mcpwm/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_ana_cmpr/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_i2s/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdmmc/include -I/home/stefano/esp/idf/esp-idf/components/sdmmc/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdspi/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_dac/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_rmt/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_tsens/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdm/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_i2c/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_uart/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_ledc/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_parlio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_usb_serial_jtag/include -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -mdisable-hardware-atomics -O2 -fmacro-prefix-map=/home/stefano/esp/projects_tf/person_detection=. -fmacro-prefix-map=/home/stefano/esp/idf/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -DTF_LITE_STATIC_MEMORY -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj -c /home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc
+In file included from /home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h:12,
+                 from /home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/esp_cpu.h:20,
+                 from /home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h:11,
+                 from /home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:49,
+                 from /home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:57,
+                 from /home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:69,
+                 from /home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc:23:
+/home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc:177:56: error: 'comparator' was not declared in this scope
+  177 |     ESP_ERROR_CHECK(mcpwm_comparator_set_compare_value(comparator, angle_to_compare(180)));
+      |                                                        ^~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc:181:56: error: 'comparator' was not declared in this scope
+  181 |     ESP_ERROR_CHECK(mcpwm_comparator_set_compare_value(comparator, angle_to_compare(0)));
+      |                                                        ^~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/detection_responder.cc:184:54: error: 'comparator' was not declared in this scope
+  184 |   ESP_ERROR_CHECK(mcpwm_comparator_set_compare_value(comparator, angle_to_compare(0)));
+      |                                                      ^~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+[5/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_camera_esp.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/app_camera_esp.c.obj 
+/home/stefano/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.4-dev-610-g003f3bb5dc\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/stefano/esp/projects_tf/person_detection/build/config -I/home/stefano/esp/idf/esp-idf/components/newlib/platform_include -I/home/stefano/esp/idf/esp-idf/components/freertos/config/include -I/home/stefano/esp/idf/esp-idf/components/freertos/config/include/freertos -I/home/stefano/esp/idf/esp-idf/components/freertos/config/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/stefano/esp/idf/esp-idf/components/freertos/esp_additions/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/soc -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/dma/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/ldo/include -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/stefano/esp/idf/esp-idf/components/esp_hw_support/port/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/heap/include -I/home/stefano/esp/idf/esp-idf/components/log/include -I/home/stefano/esp/idf/esp-idf/components/soc/include -I/home/stefano/esp/idf/esp-idf/components/soc/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/soc/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/hal/platform_port/include -I/home/stefano/esp/idf/esp-idf/components/hal/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/hal/include -I/home/stefano/esp/idf/esp-idf/components/esp_rom/include -I/home/stefano/esp/idf/esp-idf/components/esp_rom/include/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_rom/esp32s3 -I/home/stefano/esp/idf/esp-idf/components/esp_common/include -I/home/stefano/esp/idf/esp-idf/components/esp_system/include -I/home/stefano/esp/idf/esp-idf/components/esp_system/port/soc -I/home/stefano/esp/idf/esp-idf/components/esp_system/port/include/private -I/home/stefano/esp/idf/esp-idf/components/xtensa/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/xtensa/include -I/home/stefano/esp/idf/esp-idf/components/xtensa/deprecated_include -I/home/stefano/esp/idf/esp-idf/components/esp_timer/include -I/home/stefano/esp/idf/esp-idf/components/lwip/include -I/home/stefano/esp/idf/esp-idf/components/lwip/include/apps -I/home/stefano/esp/idf/esp-idf/components/lwip/include/apps/sntp -I/home/stefano/esp/idf/esp-idf/components/lwip/lwip/src/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/freertos/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/stefano/esp/idf/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/stefano/esp/idf/esp-idf/components/console -I/home/stefano/esp/idf/esp-idf/components/vfs/include -I/home/stefano/esp/idf/esp-idf/components/esp_vfs_console/include -I/home/stefano/esp/idf/esp-idf/components/spi_flash/include -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/gemmlowp -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/flatbuffers/include -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/ruy -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/third_party/kissfft -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/micro/kernels -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/src -I/home/stefano/esp/projects_tf/person_detection/components/espressif__esp-tflite-micro/signal/src/kiss_fft_wrappers -I/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/driver/include -I/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/conversions/include -I/home/stefano/esp/idf/esp-idf/components/driver/deprecated -I/home/stefano/esp/idf/esp-idf/components/driver/i2c/include -I/home/stefano/esp/idf/esp-idf/components/driver/touch_sensor/include -I/home/stefano/esp/idf/esp-idf/components/driver/twai/include -I/home/stefano/esp/idf/esp-idf/components/driver/touch_sensor/esp32s3/include -I/home/stefano/esp/idf/esp-idf/components/esp_pm/include -I/home/stefano/esp/idf/esp-idf/components/esp_ringbuf/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_gpio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_pcnt/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_gptimer/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_spi/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_mcpwm/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_ana_cmpr/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_i2s/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdmmc/include -I/home/stefano/esp/idf/esp-idf/components/sdmmc/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdspi/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_dac/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_rmt/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_tsens/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_sdm/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_i2c/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_uart/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_ledc/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_parlio/include -I/home/stefano/esp/idf/esp-idf/components/esp_driver_usb_serial_jtag/include -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -mdisable-hardware-atomics -O2 -fmacro-prefix-map=/home/stefano/esp/projects_tf/person_detection=. -fmacro-prefix-map=/home/stefano/esp/idf/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -DTF_LITE_STATIC_MEMORY -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/app_camera_esp.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/app_camera_esp.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/app_camera_esp.c.obj -c /home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c: In function 'app_camera_init':
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:30:5: error: unknown type name 'mcpwm_timer_handle_t'; did you mean 'gpio_isr_handle_t'?
+   30 |     mcpwm_timer_handle_t timer = NULL;
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     gpio_isr_handle_t
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:30:34: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   30 |     mcpwm_timer_handle_t timer = NULL;
+      |                                  ^~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:31:5: error: unknown type name 'mcpwm_timer_config_t'; did you mean 'ledc_timer_config_t'?
+   31 |     mcpwm_timer_config_t timer_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     ledc_timer_config_t
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:32:9: error: field name not in record or union initializer
+   32 |         .group_id = 0,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:32:9: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:33:9: error: field name not in record or union initializer
+   33 |         .clk_src = MCPWM_TIMER_CLK_SRC_DEFAULT,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:33:9: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:33:20: warning: excess elements in scalar initializer
+   33 |         .clk_src = MCPWM_TIMER_CLK_SRC_DEFAULT,
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:33:20: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:9: error: field name not in record or union initializer
+   34 |         .resolution_hz = SERVO_TIMEBASE_RESOLUTION_HZ,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:9: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:26: error: 'SERVO_TIMEBASE_RESOLUTION_HZ' undeclared (first use in this function)
+   34 |         .resolution_hz = SERVO_TIMEBASE_RESOLUTION_HZ,
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:26: warning: excess elements in scalar initializer
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:34:26: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:35:9: error: field name not in record or union initializer
+   35 |         .period_ticks = SERVO_TIMEBASE_PERIOD,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:35:9: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:35:25: error: 'SERVO_TIMEBASE_PERIOD' undeclared (first use in this function)
+   35 |         .period_ticks = SERVO_TIMEBASE_PERIOD,
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:35:25: warning: excess elements in scalar initializer
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:35:25: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:36:9: error: field name not in record or union initializer
+   36 |         .count_mode = MCPWM_TIMER_COUNT_MODE_UP,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:36:9: note: (near initialization for 'timer_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:36:23: error: 'MCPWM_TIMER_COUNT_MODE_UP' undeclared (first use in this function)
+   36 |         .count_mode = MCPWM_TIMER_COUNT_MODE_UP,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:36:23: warning: excess elements in scalar initializer
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:36:23: note: (near initialization for 'timer_config')
+In file included from /home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:69,
+                 from /home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.h:20,
+                 from /home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:16:
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:38:21: error: implicit declaration of function 'mcpwm_new_timer' [-Werror=implicit-function-declaration]
+   38 |     ESP_ERROR_CHECK(mcpwm_new_timer(&timer_config, &timer));
+      |                     ^~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:40:5: error: unknown type name 'mcpwm_oper_handle_t'; did you mean 'gpio_isr_handle_t'?
+   40 |     mcpwm_oper_handle_t oper = NULL;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     gpio_isr_handle_t
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:40:32: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   40 |     mcpwm_oper_handle_t oper = NULL;
+      |                                ^~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:41:5: error: unknown type name 'mcpwm_operator_config_t'
+   41 |     mcpwm_operator_config_t operator_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:42:9: error: field name not in record or union initializer
+   42 |         .group_id = 0, // operator must be in the same group to the timer
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:42:9: note: (near initialization for 'operator_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:44:21: error: implicit declaration of function 'mcpwm_new_operator' [-Werror=implicit-function-declaration]
+   44 |     ESP_ERROR_CHECK(mcpwm_new_operator(&operator_config, &oper));
+      |                     ^~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:47:21: error: implicit declaration of function 'mcpwm_operator_connect_timer' [-Werror=implicit-function-declaration]
+   47 |     ESP_ERROR_CHECK(mcpwm_operator_connect_timer(oper, timer));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:50:5: error: unknown type name 'mcpwm_cmpr_handle_t'; did you mean 'gpio_isr_handle_t'?
+   50 |     mcpwm_cmpr_handle_t comparator = NULL;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     gpio_isr_handle_t
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:50:38: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   50 |     mcpwm_cmpr_handle_t comparator = NULL;
+      |                                      ^~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:51:5: error: unknown type name 'mcpwm_comparator_config_t'
+   51 |     mcpwm_comparator_config_t comparator_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:52:9: error: field name not in record or union initializer
+   52 |         .flags.update_cmp_on_tez = true,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:52:9: note: (near initialization for 'comparator_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:54:21: error: implicit declaration of function 'mcpwm_new_comparator' [-Werror=implicit-function-declaration]
+   54 |     ESP_ERROR_CHECK(mcpwm_new_comparator(oper, &comparator_config, &comparator));
+      |                     ^~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:56:5: error: unknown type name 'mcpwm_gen_handle_t'
+   56 |     mcpwm_gen_handle_t generator = NULL;
+      |     ^~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:56:36: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   56 |     mcpwm_gen_handle_t generator = NULL;
+      |                                    ^~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:57:5: error: unknown type name 'mcpwm_generator_config_t'
+   57 |     mcpwm_generator_config_t generator_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:58:9: error: field name not in record or union initializer
+   58 |         .gen_gpio_num = SERVO_PULSE_GPIO,
+      |         ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:58:9: note: (near initialization for 'generator_config')
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:58:25: error: 'SERVO_PULSE_GPIO' undeclared (first use in this function)
+   58 |         .gen_gpio_num = SERVO_PULSE_GPIO,
+      |                         ^~~~~~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:60:21: error: implicit declaration of function 'mcpwm_new_generator' [-Werror=implicit-function-declaration]
+   60 |     ESP_ERROR_CHECK(mcpwm_new_generator(oper, &generator_config, &generator));
+      |                     ^~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:63:21: error: implicit declaration of function 'mcpwm_comparator_set_compare_value' [-Werror=implicit-function-declaration]
+   63 |     ESP_ERROR_CHECK(mcpwm_comparator_set_compare_value(comparator, angle_to_compare(90)));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:63:68: error: implicit declaration of function 'angle_to_compare' [-Werror=implicit-function-declaration]
+   63 |     ESP_ERROR_CHECK(mcpwm_comparator_set_compare_value(comparator, angle_to_compare(90)));
+      |                                                                    ^~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:67:21: error: implicit declaration of function 'mcpwm_generator_set_action_on_timer_event' [-Werror=implicit-function-declaration]
+   67 |     ESP_ERROR_CHECK(mcpwm_generator_set_action_on_timer_event(generator,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:68:63: error: implicit declaration of function 'MCPWM_GEN_TIMER_EVENT_ACTION' [-Werror=implicit-function-declaration]
+   68 |                                                               MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)));
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:68:92: error: 'MCPWM_TIMER_DIRECTION_UP' undeclared (first use in this function)
+   68 |                                                               MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)));
+      |                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:68:118: error: 'MCPWM_TIMER_EVENT_EMPTY' undeclared (first use in this function)
+   68 |                                                               MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)));
+      |                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:68:143: error: 'MCPWM_GEN_ACTION_HIGH' undeclared (first use in this function)
+   68 |                                                               MCPWM_GEN_TIMER_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, MCPWM_TIMER_EVENT_EMPTY, MCPWM_GEN_ACTION_HIGH)));
+      |                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:70:21: error: implicit declaration of function 'mcpwm_generator_set_action_on_compare_event' [-Werror=implicit-function-declaration]
+   70 |     ESP_ERROR_CHECK(mcpwm_generator_set_action_on_compare_event(generator,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:71:65: error: implicit declaration of function 'MCPWM_GEN_COMPARE_EVENT_ACTION' [-Werror=implicit-function-declaration]
+   71 |                                                                 MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, comparator, MCPWM_GEN_ACTION_LOW)));
+      |                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:71:134: error: 'MCPWM_GEN_ACTION_LOW' undeclared (first use in this function)
+   71 |                                                                 MCPWM_GEN_COMPARE_EVENT_ACTION(MCPWM_TIMER_DIRECTION_UP, comparator, MCPWM_GEN_ACTION_LOW)));
+      |                                                                                                                                      ^~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:74:21: error: implicit declaration of function 'mcpwm_timer_enable' [-Werror=implicit-function-declaration]
+   74 |     ESP_ERROR_CHECK(mcpwm_timer_enable(timer));
+      |                     ^~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:75:21: error: implicit declaration of function 'mcpwm_timer_start_stop' [-Werror=implicit-function-declaration]
+   75 |     ESP_ERROR_CHECK(mcpwm_timer_start_stop(timer, MCPWM_TIMER_START_NO_STOP));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:75:51: error: 'MCPWM_TIMER_START_NO_STOP' undeclared (first use in this function)
+   75 |     ESP_ERROR_CHECK(mcpwm_timer_start_stop(timer, MCPWM_TIMER_START_NO_STOP));
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/stefano/esp/idf/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:114:3: warning: 'pin_sscb_sda' is deprecated: please use pin_sccb_sda instead [-Wdeprecated-declarations]
+  114 |   config.pin_sscb_sda = CAMERA_PIN_SIOD;
+      |   ^~~~~~
+/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:123:13: note: declared here
+  123 |         int pin_sscb_sda __attribute__((deprecated("please use pin_sccb_sda instead")));           /*!< GPIO pin for camera SDA line (legacy name) */
+      |             ^~~~~~~~~~~~
+/home/stefano/esp/projects_tf/person_detection/main/app_camera_esp.c:115:3: warning: 'pin_sscb_scl' is deprecated: please use pin_sccb_scl instead [-Wdeprecated-declarations]
+  115 |   config.pin_sscb_scl = CAMERA_PIN_SIOC;
+      |   ^~~~~~
+/home/stefano/esp/projects_tf/person_detection/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:127:13: note: declared here
+  127 |         int pin_sscb_scl __attribute__((deprecated("please use pin_sccb_scl instead")));           /*!< GPIO pin for camera SCL line (legacy name) */
+      |             ^~~~~~~~~~~~
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.
